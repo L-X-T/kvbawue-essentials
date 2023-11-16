@@ -1,0 +1,4 @@
+<div class="text-danger" *ngIf="errors">
+  From is invalid.
+  <div *ngFor="let key of errors | errorKeys">{{ errorMessages[key] }}</div>
+</div>

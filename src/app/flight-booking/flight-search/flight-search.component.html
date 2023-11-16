@@ -19,11 +19,7 @@
         />
       </div>
 
-      <div *ngIf="flightSearchForm.controls['from']?.invalid">From is invalid.</div>
-      <div *ngIf="flightSearchForm.controls['from']?.hasError('required')">From is required.</div>
-      <div *ngIf="flightSearchForm.controls['from']?.hasError('minlength')">From minlength is 3.</div>
-      <div *ngIf="flightSearchForm.controls['from']?.hasError('maxlength')">From maxlength is 15.</div>
-      <div *ngIf="flightSearchForm.controls['from']?.hasError('pattern')">From has invalid input.</div>
+      <app-flight-validation-error [errors]="flightSearchForm.controls['from'].errors" fieldLabel="From" />
 
       <div class="form-group">
         <label>To:</label>
@@ -38,11 +34,7 @@
         />
       </div>
 
-      <div *ngIf="flightSearchForm.controls['to']?.invalid">To is invalid.</div>
-      <div *ngIf="flightSearchForm.controls['to']?.hasError('required')">To is required.</div>
-      <div *ngIf="flightSearchForm.controls['to']?.hasError('minlength')">To minlength is 3.</div>
-      <div *ngIf="flightSearchForm.controls['to']?.hasError('maxlength')">To maxlength is 15.</div>
-      <div *ngIf="flightSearchForm.controls['to']?.hasError('pattern')">To has invalid input.</div>
+      <app-flight-validation-error [errors]="flightSearchForm.controls['to'].errors" fieldLabel="To" />
 
       <div class="form-group">
         <button [disabled]="!to || !from || flightSearchForm.invalid" (click)="onSearch()" class="btn btn-default">Search</button>
